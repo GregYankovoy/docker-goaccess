@@ -26,6 +26,6 @@ RUN chmod +x /usr/local/bin/goaccess.sh && \
     chmod -R 777 /var/tmp/nginx
 
 EXPOSE 7889
-VOLUME [ "/config" ]
+VOLUME [ "/config", "/opt/log" ]
 
 CMD [ "sh", "/usr/local/bin/goaccess.sh" ]

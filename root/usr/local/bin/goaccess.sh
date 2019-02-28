@@ -7,13 +7,13 @@ PGID=${PGID}\\n"
 # create necessary config dirs if not present
 mkdir -p /config/html
 mkdir -p /config/data
-mkdir -p /config/log
+mkdir -p /opt/log
 
 # copy default goaccess config if not present
 [ -f /config/goaccess.conf ] || cp /opt/goaccess.conf /config/goaccess.conf
 
 # create an empty access.log file so goaccess does not crash if not exist
-[ -f /config/log/access.log ] || touch /config/log/access.log
+[ -f /opt/log/access.log ] || touch /opt/log/access.log
 
 # make things easier on the users with access to the folders
 chmod -R 777 /config
