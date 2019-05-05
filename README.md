@@ -1,5 +1,5 @@
 # docker-goaccess
-This docker container is intended as an easy to use starting point for GoAccess. Using nginx, GoAccess is available as a hosted web application rather than static HTML.
+This is an Alpine linux container with which builds GoAccess and includes GeoIP.  It reverse proxies the GoAccess HTML files and websockets through nginx, allowing the GoAccess content to be viewed without any other setup.
 
 # Usage
 ## Example docker run
