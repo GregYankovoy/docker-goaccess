@@ -4,7 +4,7 @@ This docker container is intended as an easy to use starting point for GoAccess.
 # Usage
 ## Example docker run
 ```
-docker run -p 7889:7889 -v /path/to/host/nginx/logs:/opt/log:ro -v /path/to/goaccess/storage:/config:rw
+docker run --name goaccess -p 7889:7889 -v /path/to/host/nginx/logs:/opt/log:ro -v /path/to/goaccess/storage:/config:rw -d gregyankovoy/goaccess
 ```
 
 ## Volume Mounts
