@@ -2,6 +2,7 @@ FROM gregyankovoy/alpine-base
 
 ARG build_deps="build-base ncurses-dev autoconf automake git gettext-dev libmaxminddb-dev"
 ARG runtime_deps="nginx tini ncurses libintl libmaxminddb"
+ARG geolite_city_link="to be replaced by build agent"
 
 WORKDIR /goaccess
 
@@ -18,7 +19,7 @@ RUN wget -q -O - https://github.com/allinurl/goaccess/archive/v1.4.tar.gz | tar 
 # Get necessary runtime dependencies and set up configuration
 RUN apk add --update --no-cache ${runtime_deps} && \
     mkdir -p /usr/local/share/GeoIP && \
-    wget -q -O- http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz | gunzip > /usr/local/share/GeoIP/GeoLite2-City.mmdb
+    wget -q -O- ${geolite_city_link} | gunzip > /usr/local/share/GeoIP/GeoLite2-City.mmdb
 
 COPY /root /
 
