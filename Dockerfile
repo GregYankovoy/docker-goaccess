@@ -20,7 +20,7 @@ RUN wget -q -O - https://github.com/allinurl/goaccess/archive/v1.4.tar.gz | tar 
 # Get necessary runtime dependencies and set up configuration
 RUN apk add --update --no-cache ${runtime_deps} && \
     mkdir -p /usr/local/share/GeoIP && \
-    wget -q -O- ${geolite_city_link} | tar -xz --directory /usr/local/share/GeoIP ${geolite_version}/GeoLite2-City.mmdb
+    wget -q -O- ${geolite_city_link} | tar -xz --strip 1 --directory /usr/local/share/GeoIP
 
 COPY /root /
 
