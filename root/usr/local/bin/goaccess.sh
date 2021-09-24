@@ -21,4 +21,4 @@ chmod -R 777 /config
 
 # ready to go
 /sbin/tini -s -- nginx -c /opt/nginx.conf
-/sbin/tini -s -- goaccess --no-global-config --config-file=/config/goaccess.conf --persist --restore --db-path "/opt/data" --real-time-html
+/sbin/tini -s -- goaccess --no-global-config --config-file=/config/goaccess.conf --persist --restore --db-path "/opt/data" --real-time-html --keep-db-files --load-from-disk
