@@ -6,8 +6,8 @@ This is an Alpine linux container which builds GoAccess including GeoIP.  It rev
 ```
 docker run --name goaccess -p 7889:7889 -v /path/to/host/nginx/logs:/opt/log -v /path/to/goaccess/storage:/config -d gregyankovoy/goaccess
 ```
-## Example `docker-compose.yml`
-
+## Example with docker compose
+`docker-compose.yml`  file :
 ```
 version: '2.1'
 
@@ -21,8 +21,8 @@ services:
     ports:
             - 7889:7889
     volumes:
-            - /var/log/nginx/:/opt/log
-            - ./goaccess:/config
+            - /path/to/host/nginx/logs:/opt/log
+            - /path/to/goaccess/storage:/config
             - goaccess-html:/config/html
     restart: unless-stopped
 ```
