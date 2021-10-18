@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 echo -e "Variables set:\\n\
 PUID=${PUID}\\n\
@@ -20,4 +20,4 @@ chmod -R 777 /config
 
 # ready to go
 /sbin/tini -s -- nginx -c /opt/nginx.conf
-/sbin/tini -s -- goaccess --no-global-config --config-file=/config/goaccess.conf
+/sbin/tini -s -- zcat /opt/log/access.log.*.gz | goaccess - /opt/log/access.log /opt/log/access.log.1 --no-global-config --config-file=/config/goaccess.conf
