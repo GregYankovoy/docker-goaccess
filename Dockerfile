@@ -30,4 +30,4 @@ RUN chmod +x /usr/local/bin/goaccess.sh && \
 EXPOSE 7889
 VOLUME [ "/config", "/opt/log" ]
 
-CMD [ "sh", "/usr/local/bin/goaccess.sh" ]
+ENTRYPOINT ["/sbin/tini", "-v", "--", "/usr/local/bin/goaccess.sh"]
