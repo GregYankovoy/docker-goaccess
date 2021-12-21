@@ -8,7 +8,7 @@ ARG geolite_version="to be replaced by build agent"
 WORKDIR /goaccess
 
 # Build goaccess with mmdb geoip
-RUN wget -q -O - https://github.com/allinurl/goaccess/archive/v1.4.tar.gz | tar --strip 1 -xzf - && \
+RUN wget -q -O - https://github.com/allinurl/goaccess/archive/v1.5.3.tar.gz | tar --strip 1 -xzf - && \
     apk add --update --no-cache ${build_deps} && \
     autoreconf -fiv && \
     ./configure --enable-utf8 --enable-geoip=mmdb && \
