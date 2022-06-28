@@ -4,7 +4,7 @@ This is an Alpine linux container which builds GoAccess including GeoIP.  It rev
 # Usage
 ## Example docker run
 ```
-docker run --name goaccess -p 7889:7889 -v /path/to/host/nginx/logs:/opt/log -v /path/to/goaccess/storage:/config -d gregyankovoy/goaccess
+docker run --name goaccess -p 7889:7889 -v /path/to/host/nginx/logs:/opt/log -v /path/to/goaccess/storage:/config -d masterwishx/goaccess
 ```
 
 ## Volume Mounts
